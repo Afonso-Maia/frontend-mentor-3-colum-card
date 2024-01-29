@@ -1,0 +1,102 @@
+:root {
+  --brigth-orange: hsl(31, 77%, 52%);
+  --dark-cyan: hsl(184, 100%, 22%);
+  --very-dark-cyan: hsl(179, 100%, 13%);
+
+  --transparent-white: hsla(0, 0%, 100%, 0.75);
+  --very-ligth-gray: hsl(0, 0%, 95%);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Lexend Deca", sans-serif;
+  display: grid;
+  place-items: center;
+  height: 100vh;
+}
+
+h1 {
+  font-family: "Big Shoulders Display", sans-serif;
+}
+
+.container {
+  display: flex;
+  max-width: 920px;
+  border-radius: 8px;
+  overflow: clip;
+}
+
+.card {
+  padding: 48px;
+}
+
+.img {
+  margin-bottom: 35px;
+}
+
+.title {
+  color: var(--very-ligth-gray);
+  font-size: 40px;
+  text-transform: uppercase;
+  font-size: 700;
+  margin-bottom: 25px;
+}
+
+.text {
+  color: var(--transparent-white);
+  font-size: 15px;
+  line-height: 25px;
+  margin-bottom: 83px;
+}
+
+.btn {
+  border: none;
+  width: 146px;
+  height: 48px;
+  border-radius: 25px;
+  font-size: 15px;
+}
+
+/* .card .btn  is necessary for higher specificity score and not use !important on the color*/
+.card .btn:hover {
+  border: 2px solid #fff;
+  color: #fff;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.card-1 {
+  background-color: var(--brigth-orange);
+  & .btn {
+    color: var(--brigth-orange);
+  }
+}
+
+.card-2 {
+  background-color: var(--dark-cyan);
+  & .btn {
+    color: var(--dark-cyan);
+  }
+}
+
+.card-3 {
+  background-color: var(--very-dark-cyan);
+  & .btn {
+    color: var(--very-dark-cyan);
+  }
+}
+
+@media (width < 376px) {
+  body {
+    height: 100%;
+    padding: 88px 24px;
+  }
+  .container {
+    flex-direction: column;
+  }
+}
